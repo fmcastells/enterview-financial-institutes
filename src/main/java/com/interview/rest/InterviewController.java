@@ -5,6 +5,10 @@ import com.interview.model.InterviewModel;
 import com.interview.service.InterviewService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class InterviewController {
@@ -16,7 +20,9 @@ public class InterviewController {
         this.service = service;
     }
 
-    public ResponseEntity<InterviewModel> normalizeNotification(final JsonNode payload) {
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<InterviewModel> normalizeNotification(@RequestBody final JsonNode payload) {
         return null;
     }
 }
